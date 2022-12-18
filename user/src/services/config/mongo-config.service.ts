@@ -6,6 +6,7 @@ import {
 export class MongoConfigService implements MongooseOptionsFactory {
   createMongooseOptions(): MongooseModuleOptions {
     return {
+      dbName: 'chat-with-me-users',
       uri: process.env.MONGO_DSN,
     };
   }

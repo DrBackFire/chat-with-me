@@ -5,9 +5,11 @@ import { MongoConfigService } from './services/config/mongo-config.service';
 import { TaskController } from './task.controller';
 import { TaskService } from './services/task.service';
 import { TaskSchema } from './schemas/task.schema';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     MongooseModule.forRootAsync({
       useClass: MongoConfigService,
     }),

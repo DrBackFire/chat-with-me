@@ -4,6 +4,7 @@ export class ConfigService {
   private readonly envConfig: { [key: string]: any } = null;
 
   constructor() {
+    console.log(process.env.API_GATEWAY_PORT);
     this.envConfig = {};
     this.envConfig.port = process.env.API_GATEWAY_PORT;
     this.envConfig.tokenService = {

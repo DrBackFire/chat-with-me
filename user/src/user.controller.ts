@@ -176,7 +176,7 @@ export class UserController {
               </center>`,
             })
             .toPromise();
-        } catch (e) {
+        } catch (e: any) {
           result = {
             status: HttpStatus.PRECONDITION_FAILED,
             message: 'user_create_precondition_failed',

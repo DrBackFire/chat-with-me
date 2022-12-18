@@ -7,9 +7,11 @@ import { MongoConfigService } from './services/config/mongo-config.service';
 import { ConfigService } from './services/config/config.service';
 import { UserSchema } from './schemas/user.schema';
 import { UserLinkSchema } from './schemas/user-link.schema';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     MongooseModule.forRootAsync({
       useClass: MongoConfigService,
     }),

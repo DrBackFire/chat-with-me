@@ -1,7 +1,8 @@
-FROM node:14.8.0-alpine
-RUN npm install -g npm@6.14.7
+FROM node:19.1.0
+RUN npm install -g npm
+RUN npm install -g @nestjs/cli
 RUN mkdir -p /var/www/gateway
 WORKDIR /var/www/gateway
 ADD . /var/www/gateway
-RUN npm install
+RUN npm i
 CMD npm run build && npm run start:prod

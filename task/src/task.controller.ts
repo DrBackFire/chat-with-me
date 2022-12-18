@@ -73,7 +73,7 @@ export class TaskController {
             errors: null,
           };
         }
-      } catch (e) {
+      } catch (e: any) {
         result = {
           status: HttpStatus.PRECONDITION_FAILED,
           message: 'task_update_by_id_precondition_failed',
@@ -108,7 +108,7 @@ export class TaskController {
           task,
           errors: null,
         };
-      } catch (e) {
+      } catch (e: any) {
         result = {
           status: HttpStatus.PRECONDITION_FAILED,
           message: 'task_create_precondition_failed',

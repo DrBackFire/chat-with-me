@@ -34,6 +34,8 @@ export class TokenService {
   }
 
   public async decodeToken(token: string) {
+    token = token?.split(' ')[1];
+
     const tokenModel = await this.tokenModel.find({
       token,
     });
@@ -45,12 +47,18 @@ export class TokenService {
           exp: number;
           userId: any;
         };
-        if (!tokenData || tokenData.exp <= Math.floor(+new Date() / 1000)) {
+
+        if (!tokenData) {
           result = null;
         } else {
           result = {
             userId: tokenData.userId,
           };
+        }
+
+        if (tokenData.exp <= Math.floor(+new Date() / 1000)) {
+          result = null;
+          this.deleteTokenForUserId(tokenData.userId);
         }
       } catch (e) {
         result = null;

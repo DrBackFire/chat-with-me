@@ -30,6 +30,6 @@ export class TaskService {
     id: string,
     params: ITaskUpdateParams,
   ): Promise<ITask> {
-    return await this.taskModel.updateOne({ _id: id }, params);
+    return (await this.taskModel.updateOne({ _id: id }, params)) as any;
   }
 }

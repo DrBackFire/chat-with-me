@@ -9,9 +9,10 @@ import { AuthGuard } from './services/guards/authorization.guard';
 import { PermissionGuard } from './services/guards/permission.guard';
 
 import { ConfigService } from './services/config/config.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [ConfigModule.forRoot()],
   controllers: [UsersController, TasksController],
   providers: [
     ConfigService,
