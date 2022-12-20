@@ -1,12 +1,9 @@
-import { signIn, useSession } from "next-auth/react";
 import { Modal, Button, TextField, FormControl } from "@mui/material";
-import { useRouter } from "next/router";
-
 import { useEffect, useState } from "react";
 import useUser from "../hooks/useUser";
 
 const Login = () => {
-  const router = useRouter();
+  // const router = useRouter();
   // const { user } = useUser();
 
   // const { session } = useSession();
@@ -92,7 +89,7 @@ const Login = () => {
         />
       </div>
       <button
-        onClick={() => signIn()}
+        // onClick={() => signIn()}
         className="py-2 w-44 shadow-md hover:animate-pulse text-gray-100 rounded-md bg-[#2196f3]"
       >
         Sign In
